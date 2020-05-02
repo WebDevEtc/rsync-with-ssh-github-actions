@@ -14,10 +14,19 @@ setupSSH(){
     chmod 600 "$SSH_PATH/known_hosts"
     chmod 600 "$SSH_PATH/deploy_key"
 
+    echo "Test output ------"
+ 
+    ls -lah "$SSH_PATH"
+    cat "$SSH_PATH/deploy_key"
+ 
+    echo "Test output ------"
+
+
     eval $(ssh-agent)
     ssh-add "$SSH_PATH/deploy_key"
-
+echo "t1"
     ssh-keyscan -t rsa $INPUT_HOST >> "$SSH_PATH/known_hosts"
+    echo "t2"
 }
 
 
