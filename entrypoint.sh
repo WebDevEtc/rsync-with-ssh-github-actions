@@ -5,6 +5,8 @@ set -eu
 
 
 setupSSH(){
+    echo "Setup SSH"
+    
     SSH_PATH="$HOME/.ssh"
     mkdir -p "$SSH_PATH"
     touch "$SSH_PATH/known_hosts"
